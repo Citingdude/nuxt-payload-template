@@ -8,7 +8,6 @@ export default defineNuxtPlugin({
   parallel: true,
   setup() {
     // const toast = useToast()
-    const api = useNuxtApp().$api as typeof $fetch
     const unauthorizedApi = useNuxtApp().$unauthorizedApi as typeof $fetch
 
     interface ZodError {
@@ -33,7 +32,7 @@ export default defineNuxtPlugin({
     }
 
     const httpClient = createHttpZodClient({
-      fetch: api,
+      fetch: unauthorizedApi,
       onZodError,
     })
 
