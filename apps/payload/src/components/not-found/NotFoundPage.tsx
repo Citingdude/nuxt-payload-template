@@ -12,15 +12,37 @@ export function NotFoundPage() {
 
   return (
 
-    <div style={{ alignItems: 'center', display: 'flex', flexDirection: 'column', gap: '2rem', height: '100vh', justifyContent: 'center' }}>
-      <div style={{ width: '12rem' }}>
+    <div style={{
+      alignItems: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '2rem',
+      height: '100vh',
+      justifyContent: 'center',
+    }}
+    >
+      <div style={{
+        width: '12rem',
+      }}
+      >
         <BigLogo />
       </div>
-      <div style={{ alignItems: 'center', display: 'flex', flexDirection: 'column', gap: '1rem', justifyContent: 'center' }}>
+      <div style={{
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
+        justifyContent: 'center',
+      }}
+      >
 
         <p>Sorry, we can't find the page you are looking for.</p>
 
-        <div style={{ maxWidth: '12rem', width: '100%' }}>
+        <div style={{
+          maxWidth: '12rem',
+          width: '100%',
+        }}
+        >
           <a
 
             className={`

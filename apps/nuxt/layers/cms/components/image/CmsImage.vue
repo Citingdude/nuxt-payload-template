@@ -9,7 +9,9 @@ interface Props {
 
 defineProps<Props>()
 
-const { CMS_BASE_URL } = getEnv()
+const {
+  CMS_BASE_URL,
+} = getEnv()
 
 function getImageUrl(url: string): string {
   return `${CMS_BASE_URL}/${url}`

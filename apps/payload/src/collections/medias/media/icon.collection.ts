@@ -27,8 +27,7 @@ export const iconCollection: CollectionConfig = {
   hooks: {
     beforeChange: [
       ({
-        data,
-        req,
+        data, req,
       }) => {
         const svgAsString = req.file?.data.toString()
 

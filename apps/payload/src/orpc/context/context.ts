@@ -13,8 +13,11 @@ export interface Context {
   user: User | null
 }
 
-export async function createContext({ locale, token }:
-{ locale: TypedLocale, token: string | null }): Promise<Context> {
+export async function createContext({
+  locale, token,
+}:
+{ locale: TypedLocale
+  token: string | null }): Promise<Context> {
   if (token == null) {
     return {
       locale,
@@ -29,7 +32,11 @@ export async function createContext({ locale, token }:
   })
 
   const payload = await getPayload()
-  const { user } = await payload.auth({ headers })
+  const {
+    user,
+  } = await payload.auth({
+    headers,
+  })
 
   if (user == null) {
     return {
@@ -44,5 +51,9 @@ export async function createContext({ locale, token }:
     collection: 'users',
   })
 
-  return { locale, token, user: foundUser }
+  return {
+    locale,
+    token,
+    user: foundUser,
+  }
 }

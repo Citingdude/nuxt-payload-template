@@ -1,5 +1,8 @@
 import { getLinkField } from '@payload/fields/link/link.field'
-import type { Field, GroupField } from 'payload'
+import type {
+  Field,
+  GroupField,
+} from 'payload'
 
 export interface GetCtaFieldOptions {
   name: string
@@ -13,7 +16,9 @@ export const CTA_EVENTS = [
   },
 ]
 
-export function getCtaField({ name, label }: GetCtaFieldOptions): GroupField {
+export function getCtaField({
+  name, label,
+}: GetCtaFieldOptions): GroupField {
   const fields: Field[] = [
     {
       name: 'label',
@@ -57,7 +62,9 @@ export function getCtaField({ name, label }: GetCtaFieldOptions): GroupField {
     getLinkField({
       disableLabel: true,
       overrides: {
-        admin: { condition: (_, siblingData) => siblingData?.ctaType === 'link' },
+        admin: {
+          condition: (_, siblingData) => siblingData?.ctaType === 'link',
+        },
       },
     }),
     {

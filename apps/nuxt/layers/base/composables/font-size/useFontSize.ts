@@ -1,5 +1,8 @@
 import type { VcSelectItemProps } from '@wisemen/vue-core-components'
-import type { ComputedRef, Ref } from 'vue'
+import type {
+  ComputedRef,
+  Ref,
+} from 'vue'
 import {
   computed,
   watch,
@@ -47,7 +50,9 @@ export function useFontSizeSelect(): UseFontSizeReturnType {
   })
 
   function displayFn(value: FontSize): string {
-    const { t } = useGlobalI18n()
+    const {
+      t,
+    } = useGlobalI18n()
 
     return t(i18nKeys.get(value)!)
   }

@@ -3,7 +3,9 @@ import { getPayload } from '@payload/utils/payload/getPayload.util'
 import { socialSchema } from '@repo/models'
 
 export const getSettingsSocials = publicProcedure.settings.getSettingsSocials
-  .handler(async ({ context }) => {
+  .handler(async ({
+    context,
+  }) => {
     const payload = await getPayload()
 
     const settings = await payload.findGlobal({

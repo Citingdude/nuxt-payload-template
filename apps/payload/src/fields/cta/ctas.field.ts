@@ -12,7 +12,12 @@ export interface GetCtasFieldOptions {
   minItems?: number
 }
 
-export function getCtasField({ name, label, maxItems, minItems }: GetCtasFieldOptions): ArrayField {
+export function getCtasField({
+  name,
+  label,
+  maxItems,
+  minItems,
+}: GetCtasFieldOptions): ArrayField {
   const field: Field = {
     name,
     fields: [

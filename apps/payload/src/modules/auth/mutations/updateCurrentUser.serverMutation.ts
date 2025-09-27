@@ -5,7 +5,9 @@ import type { User } from '@repo/payload-types'
 import { filterOptionalValues } from '@repo/utils'
 
 export const updateCurrentUser = authProcedure.auth.updateCurrentUser
-  .handler(async ({ context, input }) => {
+  .handler(async ({
+    context, input,
+  }) => {
     const payload = await getPayload()
 
     const filteredInput = filterOptionalValues(input)

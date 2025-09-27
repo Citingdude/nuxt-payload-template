@@ -3,12 +3,17 @@ import type { CustomMiddleware } from '@payload/middlewares/helper.middleware'
 import { NextResponse } from 'next/server'
 
 export async function withAuthMiddleware(customMiddleware: CustomMiddleware) {
-  const { request, response } = customMiddleware
+  const {
+    request, response,
+  } = customMiddleware
 
   if (request.nextUrl.pathname === '/login') {
     return customMiddleware
   }
-  const authData = await getAuthData({ req: request, res: response })
+  const authData = await getAuthData({
+    req: request,
+    res: response,
+  })
 
   if (authData == null) {
     return customMiddleware

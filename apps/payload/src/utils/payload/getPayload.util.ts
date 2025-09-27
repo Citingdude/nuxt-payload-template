@@ -6,7 +6,9 @@ export async function getPayload() {
   // Tag page as dynamic for nextjs
   await cookies()
 
-  const payload = await getPayloadWithConfig({ config })
+  const payload = await getPayloadWithConfig({
+    config,
+  })
 
   return payload
 }

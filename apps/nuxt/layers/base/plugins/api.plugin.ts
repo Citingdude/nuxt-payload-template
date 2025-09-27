@@ -43,7 +43,9 @@ export default defineNuxtPlugin({
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      async onRequest({ options }) {
+      async onRequest({
+        options,
+      }) {
         const token = await oAuthClient.getAccessToken()
 
         if (token == null) {
@@ -52,7 +54,9 @@ export default defineNuxtPlugin({
 
         addAuthorizationHeader(token, options)
       },
-      async onResponseError({ response }) {
+      async onResponseError({
+        response,
+      }) {
         const localeRoute = useLocaleRoute()
 
         if (response.status === 401) {

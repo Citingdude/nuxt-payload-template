@@ -1,13 +1,13 @@
-import type {
-  UploadField,
-} from 'payload'
+import type { UploadField } from 'payload'
 
 export interface GetImageFieldOptions {
   name: string
   label: string
 }
 
-export function getImageField({ name, label }: GetImageFieldOptions): UploadField {
+export function getImageField({
+  name, label,
+}: GetImageFieldOptions): UploadField {
   return {
     name,
     label,

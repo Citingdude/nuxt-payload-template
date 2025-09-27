@@ -4,7 +4,13 @@ export default [
   ...(await WisemenEslintConfig),
   {
     rules: {
+      'better-tailwindcss/no-unregistered-classes': 'off',
+      'check-file/folder-naming-convention': 'off',
+      'eslint-plugin-wisemen/explicit-function-return-type-with-regex': 'off',
+      'func-style': 'off',
+      'project-structure/independent-modules': 'off',
       'ts/explicit-function-return-type': 'off',
+      'unicorn/no-empty-file': 'off',
     },
   },
   {

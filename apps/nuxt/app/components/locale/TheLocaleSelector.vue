@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { vcDropdownMenuItemProps } from '@wisemen/vue-core-components'
+import type { VcDropdownMenuItemProps } from '@wisemen/vue-core-components'
 import {
   VcDropdownMenu,
   VcIcon,
@@ -7,7 +7,9 @@ import {
 
 import { translateLocale } from '~base/translations/locale.translate'
 
-const { locale, locales } = useI18n()
+const {
+  locale, locales,
+} = useI18n()
 
 type LocaleObject = typeof locales.value[number]
 const switchLocalePath = useSwitchLocalePath()
@@ -16,7 +18,7 @@ const availableLocales = computed<LocaleObject[]>(() => {
   return locales.value.filter((i) => i.code !== locale.value)
 })
 
-const dropdownItems = computed<vcDropdownMenuItemProps[]>(() => {
+const dropdownItems = computed<VcDropdownMenuItemProps[]>(() => {
   return availableLocales.value.map((i) => ({
     label: translateLocale(i.code),
     type: 'option',

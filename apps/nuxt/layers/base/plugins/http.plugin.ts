@@ -19,7 +19,11 @@ export default defineNuxtPlugin({
 
     const ENVIRONMENT = import.meta.env.ENVIRONMENT
 
-    function onZodError({ error, method, url }: ZodError): void {
+    function onZodError({
+      error,
+      method,
+      url,
+    }: ZodError): void {
       if (ENVIRONMENT !== 'production') {
         // handle production error
         // toast.error({ title: `${method.toUpperCase()} ${url} returned a malformed response\n\n` })

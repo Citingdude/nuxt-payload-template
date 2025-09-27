@@ -7,15 +7,21 @@ import PageView from '@cms/views/PageView.vue'
 import { NuxtErrorBoundary } from '#components'
 import { getEnv } from '~base/utils/env/getEnv.utils'
 
-const { CMS_BASE_URL } = getEnv()
+const {
+  CMS_BASE_URL,
+} = getEnv()
 
 const route = useRoute('page___en')
 const pageName = computed<string>(() => route.params.page?.join('/') ?? '')
-const pageQuery = usePageQuery({ slug: pageName.value })
+const pageQuery = usePageQuery({
+  slug: pageName.value,
+})
 
 await pageQuery.suspense()
 
-const { data } = useLivePreview({
+const {
+  data,
+} = useLivePreview({
   initialData: pageQuery.data,
 })
 

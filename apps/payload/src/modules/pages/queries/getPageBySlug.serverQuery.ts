@@ -2,7 +2,11 @@ import { publicProcedure } from '@payload/orpc/procedures/public.procedure'
 import { getPayload } from '@payload/utils/payload/getPayload.util'
 
 export const getPageBySlug = publicProcedure.pages.getPageBySlug
-  .handler(async ({ context, errors, input }) => {
+  .handler(async ({
+    context,
+    errors,
+    input,
+  }) => {
     const payload = await getPayload()
 
     const paginatedPages = await payload.find({

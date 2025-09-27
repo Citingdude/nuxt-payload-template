@@ -5,7 +5,9 @@ import { useAuthStore } from '~base/stores/auth.store'
 
 export default defineNuxtRouteMiddleware(async () => {
   const authStore = useAuthStore()
-  const { locale } = useGlobalI18n()
+  const {
+    locale,
+  } = useGlobalI18n()
   const oAuthClient = useNuxtApp().$oAuthClient
   const localePath = `/${locale.value}`
 

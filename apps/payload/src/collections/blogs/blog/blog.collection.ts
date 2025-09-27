@@ -43,7 +43,9 @@ export const blogCollection: CollectionConfig = {
     {
       name: 'blog',
       editor: lexicalEditor({
-        features: ({ defaultFeatures }) => [
+        features: ({
+          defaultFeatures,
+        }) => [
           ...defaultFeatures,
           BlocksFeature({
             blocks: [

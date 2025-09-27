@@ -1,4 +1,7 @@
-import { readFileSync, writeFileSync } from 'node:fs'
+import {
+  readFileSync,
+  writeFileSync,
+} from 'node:fs'
 
 const TYPE_STRING = '/** @type {Record<string, any>} */'
 const INSERT_BEFORE_STRING = 'export const importMap = {'

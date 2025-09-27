@@ -1,4 +1,3 @@
-/* eslint-disable func-style */
 'use client'
 
 import '@payloadcms/next/css'
@@ -10,7 +9,10 @@ import {
   useTranslation,
 } from '@payloadcms/ui'
 import type { groupNavItems } from '@payloadcms/ui/shared'
-import { EntityType, formatAdminURL } from '@payloadcms/ui/shared'
+import {
+  EntityType,
+  formatAdminURL,
+} from '@payloadcms/ui/shared'
 import LinkWithDefault from 'next/link.js'
 import { usePathname } from 'next/navigation.js'
 import type { NavPreferences } from 'payload'
@@ -21,34 +23,51 @@ const baseClass = 'nav'
 export const DefaultNavClient: React.FC<{
   groups: ReturnType<typeof groupNavItems>
   navPreferences: NavPreferences
-}> = ({ groups, navPreferences }) => {
+}> = ({
+  groups, navPreferences,
+}) => {
   const pathname = usePathname()
 
-  // eslint-disable-next-line putout/single-property-destructuring
   const {
     config: {
-      routes: { admin: adminRoute },
+      routes: {
+        admin: adminRoute,
+      },
     },
   } = useConfig()
 
-  const { i18n } = useTranslation()
+  const {
+    i18n,
+  } = useTranslation()
 
   return (
     <Fragment>
-      {groups.map(({ entities, label }, key) => {
+      {groups.map(({
+        entities, label,
+      }, key) => {
         return (
           <NavGroup isOpen={navPreferences?.groups?.[label]?.open} key={key} label={label}>
-            {entities.map(({ label, slug, type }, i) => {
+            {entities.map(({
+              label,
+              slug,
+              type,
+            }, i) => {
               let href: string
               let id: string
 
               if (type === EntityType.collection) {
-                href = formatAdminURL({ adminRoute, path: `/collections/${slug}` })
+                href = formatAdminURL({
+                  adminRoute,
+                  path: `/collections/${slug}`,
+                })
                 id = `nav-${slug}`
               }
 
               if (type === EntityType.global) {
-                href = formatAdminURL({ adminRoute, path: `/globals/${slug}` })
+                href = formatAdminURL({
+                  adminRoute,
+                  path: `/globals/${slug}`,
+                })
                 id = `nav-global-${slug}`
               }
 

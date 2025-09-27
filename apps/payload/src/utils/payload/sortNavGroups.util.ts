@@ -1,6 +1,9 @@
 import { navSorting } from '@payload/payload.nav'
 import type { NavGroupType } from '@payloadcms/ui/shared'
-import type { CollectionSlug, GlobalSlug } from 'payload'
+import type {
+  CollectionSlug,
+  GlobalSlug,
+} from 'payload'
 
 export function sortNavGroups(groups: NavGroupType[]): NavGroupType[] {
   const sortedGroups = groups.toSorted((a, b) => {

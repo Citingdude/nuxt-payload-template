@@ -1,6 +1,5 @@
 @import '@payloadcms/next/css';
 
-
 .nav {
   position: sticky;
   top: 0;
@@ -75,7 +74,7 @@
     margin-top: auto;
     margin-bottom: 0;
 
-    >* {
+    > * {
       margin-top: base(1);
     }
 

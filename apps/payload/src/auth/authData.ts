@@ -4,7 +4,10 @@ import {
   getCookie,
   setCookie,
 } from 'cookies-next'
-import type { NextRequest, NextResponse } from 'next/server'
+import type {
+  NextRequest,
+  NextResponse,
+} from 'next/server'
 import { z } from 'zod'
 // import { useCookies } from 'next-client-cookies'
 
@@ -54,8 +57,14 @@ export function setAuthCookie(authResponse: AuthResponse) {
   setCookie('tokens', JSON.stringify(tokens))
 }
 
-export async function getAuthData({ req, res }: { req: NextRequest, res: NextResponse }): Promise<AuthData | null> {
-  const tokensCookie = await getCookie('tokens', { req, res })
+export async function getAuthData({
+  req, res,
+}: { req: NextRequest
+  res: NextResponse }): Promise<AuthData | null> {
+  const tokensCookie = await getCookie('tokens', {
+    req,
+    res,
+  })
 
   if (tokensCookie == null) {
     return null

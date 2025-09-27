@@ -19,7 +19,9 @@ function useIdFunction() {
   return useId()
 }
 
-const { theme } = useTheme()
+const {
+  theme,
+} = useTheme()
 const darkMode = useDarkMode()
 const locale = useI18n().locale
 </script>

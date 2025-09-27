@@ -6,9 +6,7 @@ import type {
   UseQueryOptions,
   UseQueryReturnType,
 } from '@tanstack/vue-query'
-import {
-  useQuery as useTanstackQuery,
-} from '@tanstack/vue-query'
+import { useQuery as useTanstackQuery } from '@tanstack/vue-query'
 
 import { useClientOnlyQuery } from '~base/composables/query/useClientOnlyQuery'
 

@@ -1,4 +1,3 @@
-/* eslint-disable func-style */
 import { defu } from 'defu'
 import type {
   CollectionSlug,

@@ -3,8 +3,7 @@ import type { CustomMiddleware } from '@payload/middlewares/helper.middleware'
 
 export function withCorsMiddleware(customMiddleware: CustomMiddleware) {
   const {
-    request,
-    response,
+    request, response,
   } = customMiddleware
   const responseHeaders = new Headers(response.headers)
 

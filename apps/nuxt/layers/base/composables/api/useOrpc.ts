@@ -28,8 +28,12 @@ async function handleAuth(headers: Record<string, string>) {
 }
 
 export function useOrpc() {
-  const { CMS_BASE_URL } = getEnv()
-  const { locale } = useGlobalI18n()
+  const {
+    CMS_BASE_URL,
+  } = getEnv()
+  const {
+    locale,
+  } = useGlobalI18n()
 
   const link = new RPCLink({
     async headers() {
