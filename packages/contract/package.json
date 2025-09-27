@@ -1,0 +1,28 @@
+{
+  "name": "@repo/contract",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint",
+    "ci": "pnpm build",
+    "lint:fix": "eslint --fix",
+    "clean": "rm -rf node_modules && rm -rf .output && rm -rf .next && rm -rf .dist",
+    "standalone-script": "node ./src/scripts/standalone-script.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@orpc/contract": "catalog:orpc",
+    "@repo/models": "workspace:*",
+    "@repo/payload-types": "workspace:*",
+    "zod": "catalog:types"
+  },
+  "devDependencies": {
+    "@wisemen/eslint-config-vue": "catalog:lint",
+    "eslint": "catalog:lint",
+    "typescript": "catalog:types"
+  }
+}

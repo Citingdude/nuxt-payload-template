@@ -1,0 +1,20 @@
+---
+  name: Auto-deploy to development
+  
+  on: # yamllint disable-line rule:truthy
+    push:
+      branches: [main]
+    workflow_dispatch:
+      inputs:
+        image-variants:
+          description: List of variants (comma separated)
+          type: string
+          required: false
+  
+  jobs:
+    build-and-deploy:
+      uses: wisemen-digital/devops-github-actions/.github/workflows/workflow-build-and-deploy-scaleway.yml@main
+      with:
+        environment: development
+        image-variants: ${{ inputs.image-variants }}
+      secrets: inherit

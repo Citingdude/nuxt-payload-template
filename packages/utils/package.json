@@ -1,0 +1,23 @@
+{
+  "name": "@repo/utils",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@repo/models": "workspace:*",
+    "@repo/payload-types": "workspace:*"
+  },
+  "devDependencies": {
+    "@wisemen/eslint-config-vue": "catalog:lint",
+    "eslint": "catalog:lint",
+    "typescript": "catalog:types",
+    "vitest": "catalog:test"
+  }
+}

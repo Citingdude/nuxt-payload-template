@@ -1,0 +1,25 @@
+{
+  "name": "@repo/models",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint",
+    "ci": "pnpm build",
+    "lint:fix": "eslint --fix",
+    "clean": "rm -rf node_modules && rm -rf .output && rm -rf .next && rm -rf .dist",
+    "standalone-script": "node ./src/scripts/standalone-script.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@repo/payload-types": "workspace:*",
+    "@wisemen/eslint-config-vue": "catalog:lint",
+    "eslint": "catalog:lint",
+    "typescript": "catalog:types"
+  }
+}

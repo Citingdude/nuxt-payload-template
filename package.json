@@ -1,0 +1,36 @@
+{
+  "name": "nuxt-layer-template",
+  "type": "module",
+  "packageManager": "pnpm@10.6.5",
+  "version": "0.0.0",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "devturbo": "pnpm -r devturbo",
+    "dev": "turbo run dev",
+    "dev:payload": "pnpm -filter ./apps/payload dev",
+    "dev:nuxt": "pnpm -filter ./apps/nuxt dev",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
+    "clean": "pnpm -r clean",
+    "build": "pnpm -r build",
+    "typecheck": "turbo typecheck",
+    "test": "vitest --run",
+    "precommit": "pnpm lint && pnpm typecheck && pnpm test",
+    "mc": "pnpm -r mc"
+  },
+  "pnpm": {
+    "overrides": {
+      "@intlify/eslint-plugin-vue-i18n>@intlify/core-base": "^10.0.4",
+      "@intlify/eslint-plugin-vue-i18n>@intlify/message-compiler": "^10.0.4"
+    }
+  },
+  "dependencies": {
+    "turbo": "2.5.5"
+  },
+  "devDependencies": {
+    "vitest": "catalog:test"
+  }
+}

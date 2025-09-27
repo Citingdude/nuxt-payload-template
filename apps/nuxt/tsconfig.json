@@ -1,0 +1,19 @@
+{
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": ["./.nuxt/tsconfig.json"],
+  "compilerOptions": {
+    "types": [
+      "@types/dom-view-transitions"
+    ],
+    "allowJs": true,
+    "outDir": "dist"
+  },
+  "references": [
+    {
+      "path": "../payload/tsconfig.composite.json"
+    }
+  ],
+  "exclude": [
+    "dist"
+  ]
+}
