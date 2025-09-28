@@ -18,6 +18,7 @@ export default [
       '**/app/(payload)',
       '**/migrations',
       '**/payload-types.ts',
+      '**/.turbo',
     ],
   },
 ]

@@ -10,7 +10,9 @@ export const zodPage = z.custom<Page>((val) => {
   }
 
   return true
-}, { message: 'Page is invalid' })
+}, {
+  message: 'Page is invalid',
+})
 
 const getPageBySlug = publicProcedure
   .route({
