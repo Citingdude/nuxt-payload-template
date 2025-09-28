@@ -11,6 +11,9 @@
     "lint:fix": {
       "outputs": []
     },
+    "build": {
+      "outputs": []
+    },
     "dev": {
       "persistent": true,
       "cache": false
