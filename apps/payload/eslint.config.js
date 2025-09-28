@@ -1,7 +1,9 @@
 import WisemenEslintConfig from '@wisemen/eslint-config-vue'
 
-export default [
-  ...(await WisemenEslintConfig),
+const baseConfig = await WisemenEslintConfig
+
+export default ([
+  ...baseConfig,
   {
     rules: {
       'better-tailwindcss/no-unregistered-classes': 'off',
@@ -21,4 +23,4 @@ export default [
       '**/.turbo',
     ],
   },
-]
+])
