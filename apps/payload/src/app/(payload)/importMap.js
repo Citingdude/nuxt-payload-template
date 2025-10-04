@@ -35,7 +35,6 @@ import { Icon as Icon_6236c4428afca49e72929850c0e65ebf } from '../../components/
 import { Logo as Logo_6236c4428afca49e72929850c0e65ebf } from '../../components/logo/Logo'
 import { S3ClientUploadHandler as S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24 } from '@payloadcms/storage-s3/client'
 
-/** @type {Record<string, any>} */
 export const importMap = {
   "@payload/fields/slug/components/SlugComponent#SlugComponent": SlugComponent_76d8b9e383a7273dae23d14458c914aa,
   "@payload/components/fields/FieldArrayRowColumnLabel.tsx#FieldArrayRowColumnLabel": FieldArrayRowColumnLabel_51900b7c5688a99855d44af186ddc56e,

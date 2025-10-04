@@ -135,4 +135,8 @@ export default defineNuxtConfig({
     experimentalCompression: true,
     experimentalWarmUp: true,
   },
+
+  typescript: {
+    includeWorkspace: true,
+  },
 })

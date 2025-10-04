@@ -2,6 +2,9 @@ import { getUploadName } from '@payload/utils/upload/getUploadName.util'
 import type { CollectionConfig } from 'payload'
 
 export const imageCollection: CollectionConfig = {
+  access: {
+    read: () => true,
+  },
   fields: [
     {
       name: 'alt',
