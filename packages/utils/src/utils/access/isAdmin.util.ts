@@ -5,6 +5,6 @@ const ADMIN_ROLES: Set<User['role']> = new Set([
   'admin',
 ])
 
-export function isAdmin(user: User) {
+export function isAdmin(user: User): boolean {
   return ADMIN_ROLES.has(user.role)
 }

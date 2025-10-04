@@ -12,20 +12,15 @@ export const navSorting: Record<string, (CollectionSlug | GlobalSlug)[]> = {
     'pages',
     'blogs',
   ],
-  forms: [
-    'form-hubspot',
-  ],
   media: [
     'images',
     'icons',
   ],
   users: [
     'users',
-    'addresses',
   ],
   settings: [
     'settings',
-    'tenants',
   ],
 }
 

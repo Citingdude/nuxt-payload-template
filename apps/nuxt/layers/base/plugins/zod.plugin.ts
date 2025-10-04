@@ -14,7 +14,9 @@ export default defineNuxtPlugin({
   parallel: true,
   setup() {
     function customErrorMap(issue: ZodIssueOptionalMessage, ctx: ErrorMapCtx): { message: string } {
-      const { t } = useGlobalI18n()
+      const {
+        t,
+      } = useGlobalI18n()
 
       const isStringAndEmpty = issue.code === 'too_small' && issue.minimum === 1 && issue.type === 'string'
       const isInvalidType = issue.code === 'invalid_type'
@@ -128,7 +130,9 @@ export default defineNuxtPlugin({
         }
         if (issue.type === 'date') {
           return {
-            message: t('base.validation.too_small_date', { v: issue.minimum }),
+            message: t('base.validation.too_small_date', {
+              v: issue.minimum,
+            }),
           }
         }
 

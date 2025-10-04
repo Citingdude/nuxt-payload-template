@@ -8,7 +8,6 @@ export default defineNuxtPlugin({
   parallel: true,
   setup() {
     // const toast = useToast()
-    const api = useNuxtApp().$api as typeof $fetch
     const unauthorizedApi = useNuxtApp().$unauthorizedApi as typeof $fetch
 
     interface ZodError {
@@ -19,7 +18,11 @@ export default defineNuxtPlugin({
 
     const ENVIRONMENT = import.meta.env.ENVIRONMENT
 
-    function onZodError({ error, method, url }: ZodError): void {
+    function onZodError({
+      error,
+      method,
+      url,
+    }: ZodError): void {
       if (ENVIRONMENT !== 'production') {
         // handle production error
         // toast.error({ title: `${method.toUpperCase()} ${url} returned a malformed response\n\n` })
@@ -29,7 +32,7 @@ export default defineNuxtPlugin({
     }
 
     const httpClient = createHttpZodClient({
-      fetch: api,
+      fetch: unauthorizedApi,
       onZodError,
     })
 

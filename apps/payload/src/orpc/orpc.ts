@@ -15,7 +15,9 @@ export const locales = [
   'nl',
 ] as const
 export const localeSchema = z.enum(locales)
-export const orpc = orpcWithContextHeaders.use(async ({ context, next }) => {
+export const orpc = orpcWithContextHeaders.use(async ({
+  context, next,
+}) => {
   const locale = localeSchema.parse(context['Accept-Language'] ?? ORPC_BASE_LOCALE)
 
   const runtimeContext = await createContext({

@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { VcIcon, VcSpinner } from '@wisemen/vue-core-components'
+import {
+  VcIcon,
+  VcSpinner,
+} from '@wisemen/vue-core-components'
 import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{
@@ -8,7 +11,9 @@ const props = defineProps<{
   autoSaveErrorMessage: string | null
 }>()
 
-const { t } = useI18n()
+const {
+  t,
+} = useI18n()
 </script>
 
 <template>

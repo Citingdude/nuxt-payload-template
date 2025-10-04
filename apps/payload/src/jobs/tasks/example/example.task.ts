@@ -2,7 +2,9 @@
 import type { TaskConfig } from 'payload'
 
 export const exampleTask: TaskConfig<'exampleTask'> = {
-  handler: ({ input }) => {
+  handler: ({
+    input,
+  }) => {
     return {
       output: {
         title: input.title,

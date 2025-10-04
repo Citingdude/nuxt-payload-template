@@ -6,7 +6,9 @@ export function formatCurrency(currency: Currency | null): string {
   if (currency === null) {
     return '-'
   }
-  const { locale } = useGlobalI18n()
+  const {
+    locale,
+  } = useGlobalI18n()
 
   const formatter = new Intl.NumberFormat(locale.value, {
     currency: 'EUR',

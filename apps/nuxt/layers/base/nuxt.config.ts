@@ -1,4 +1,5 @@
 import tailwindcss from '@tailwindcss/vite'
+import type { PluginOption } from 'vite'
 
 export default defineNuxtConfig({
   components: [],
@@ -51,7 +52,7 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [
-      tailwindcss(),
+      tailwindcss() as PluginOption,
     ],
   },
 })

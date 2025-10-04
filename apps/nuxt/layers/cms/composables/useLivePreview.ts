@@ -13,11 +13,15 @@ import { getEnv } from '~base/utils/env/getEnv.utils'
 export function useLivePreview<T>(props: {
   initialData: Ref<T>
 }): {
-    isLoading: Ref<boolean>
-    data: Ref<T>
-  } {
-  const { initialData } = props
-  const { CMS_BASE_URL } = getEnv()
+  isLoading: Ref<boolean>
+  data: Ref<T>
+} {
+  const {
+    initialData,
+  } = props
+  const {
+    CMS_BASE_URL,
+  } = getEnv()
 
   const data = ref<T>(toRaw(initialData.value)) as Ref<T>
   const isLoading = ref<boolean>(true)
@@ -27,7 +31,7 @@ export function useLivePreview<T>(props: {
     data.value = toRaw(initialData.value)
   })
 
-  function onChange(mergedData: T) {
+  function onChange(mergedData: T): void {
     data.value = mergedData
     isLoading.value = false
   }

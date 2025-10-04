@@ -6,38 +6,79 @@ interface Props {
   block: HeroBlock
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 </script>
 
 <template>
-  <div
-    v-if="block.blockType === 'hero'"
-    class="bg-brand-primary flex h-dvh flex-col items-center justify-center"
-  >
-    <div class="w-full flex-1 overflow-hidden">
-      <CmsImage
-        v-if="(typeof block.backgroundImage !== 'string')"
-        :image="block.backgroundImage"
-        class="object-cover"
-      />
-    </div>
-
-    <div class="bg-brand-primary text-brand-primary w-full py-12">
-      <div class="container mx-auto flex flex-col px-4 py-1">
-        <div
+  <section class="body-font text-gray-600">
+    <div
+      class="
+        container mx-auto flex flex-col items-center px-5 py-24
+        md:flex-row
+      "
+    >
+      <div
+        class="
+          mb-10 w-5/6
+          md:mb-0 md:w-1/2
+          lg:w-full
+        "
+      >
+        <CmsImage
+          :image="props.block.backgroundImage"
+          alt="hero"
+          class="w-full"
+        />
+      </div>
+      <div
+        class="
+          flex flex-col items-center text-center
+          md:w-1/2 md:items-start md:pl-16 md:text-left
+          lg:flex-grow lg:pl-24
+        "
+      >
+        <h1
           class="
-            grid items-center justify-center gap-2
-            lg:grid-cols-[0.6fr,0.4fr]
+            title-font mb-4 text-3xl font-medium text-gray-900
+            sm:text-4xl
           "
         >
-          <span class="text-hero leading-[4.5rem]">
-            {{ block.title }}
-          </span>
-          <span class="text-subtext">
-            {{ block.text }}
-          </span>
+          {{ props.block.title }}
+        </h1>
+
+        <p class="mb-8 leading-relaxed">
+          {{ props.block.text }}
+        </p>
+
+        <div
+          v-if="props.block.ctas && props.block.ctas.length > 0"
+          class="flex justify-center"
+        >
+          <button
+            v-if="props.block.ctas[0]"
+            class="
+              bg-primary inline-flex rounded border-0 px-6 py-2 text-lg
+              text-white
+              hover:bg-indigo-600
+              focus:outline-none
+            "
+          >
+            {{ props.block.ctas[0].cta.label }}
+          </button>
+
+          <button
+            v-if="props.block.ctas[1]"
+            class="
+              ml-4 inline-flex rounded border-0 bg-gray-100 px-6 py-2 text-lg
+              text-gray-700
+              hover:bg-gray-200
+              focus:outline-none
+            "
+          >
+            {{ props.block.ctas[1].cta.label }}
+          </button>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>

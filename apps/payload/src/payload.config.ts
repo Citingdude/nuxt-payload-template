@@ -25,6 +25,7 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   globals: setCollectionGroups(globals),
   collections: setCollectionGroups(collections),
+  serverURL: 'http://localhost:5173',
   admin: {
     components: {
       graphics: {
@@ -32,9 +33,6 @@ export default buildConfig({
         Logo: '/components/logo/Logo#Logo',
       },
       Nav: '@payload/components/nav/Nav#DefaultNav',
-      afterLogin: [
-        '@payload/components/auth/LoginButton',
-      ],
     },
     importMap: {
       baseDir: path.resolve(dirname),
@@ -57,7 +55,10 @@ export default buildConfig({
   }),
   editor: lexicalEditor(),
   i18n: {
-    supportedLanguages: { en, nl },
+    supportedLanguages: {
+      en,
+      nl,
+    },
   },
   localization: {
     defaultLocale: 'nl',

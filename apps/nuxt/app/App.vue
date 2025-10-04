@@ -19,13 +19,15 @@ function useIdFunction() {
   return useId()
 }
 
-const { theme } = useTheme()
+const {
+  theme,
+} = useTheme()
 const darkMode = useDarkMode()
 const locale = useI18n().locale
 </script>
 
 <template>
-  <div class="flex w-screen flex-1">
+  <div class="flex flex-1">
     <div class="w-full">
       <RekaConfigProvider :use-id="useIdFunction">
         <VcConfigProvider :locale="locale">

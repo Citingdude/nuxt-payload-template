@@ -1,39 +1,30 @@
 <script setup lang="ts">
 import type { Image } from '@repo/payload-types'
 
-import { getEnv } from '~base/utils/env/getEnv.utils'
-
-interface Props {
+const props = defineProps<{
   image: string | Image
-}
 
-defineProps<Props>()
-
-const { CMS_BASE_URL } = getEnv()
-
-function getImageUrl(url: string): string {
-  return `${CMS_BASE_URL}/${url}`
-}
+}>()
 </script>
 
 <template>
-  <picture v-if="(typeof image !== 'string')">
+  <picture v-if="(typeof props.image !== 'string')">
     <template
-      v-for="size in Object.values(image.sizes ?? {})"
+      v-for="size in Object.values(props.image.sizes ?? {})"
       :key="size.url ?? 'url'"
     >
 
       <source
         v-if="size.url"
         :media="`(max-width:${size.width}px)`"
-        :srcset="getImageUrl(size.url)"
+        :srcset="size.url"
       >
     </template>
 
     <img
-      v-if="image.url"
-      :src="getImageUrl(image.sizes?.desktop?.url ?? image.url)"
-      :alt="image.alt ?? ''"
+      v-if="props.image.url"
+      :src="props.image.sizes?.desktop?.url ?? props.image.url"
+      :alt="props.image.alt ?? ''"
       :class="$attrs.class"
     >
   </picture>

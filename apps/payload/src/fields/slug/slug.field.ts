@@ -1,5 +1,7 @@
-/* eslint-disable func-style */
-import type { CheckboxField, TextField } from 'payload'
+import type {
+  CheckboxField,
+  TextField,
+} from 'payload'
 
 import { formatSlugHook } from './utils/formatSlug.util'
 
@@ -12,8 +14,7 @@ type Slug = (fieldToUse?: string, overrides?: Overrides) => [TextField, Checkbox
 
 export const getSlugField: Slug = (fieldToUse = 'title', overrides = {}) => {
   const {
-    checkboxOverrides,
-    slugOverrides,
+    checkboxOverrides, slugOverrides,
   } = overrides
 
   const checkBoxField: CheckboxField = {

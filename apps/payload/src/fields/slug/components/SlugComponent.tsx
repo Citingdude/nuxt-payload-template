@@ -1,4 +1,3 @@
-/* eslint-disable func-style */
 'use client'
 import '@payload/fields/slug/styles/slug.style.css'
 
@@ -12,7 +11,10 @@ import {
   useFormFields,
 } from '@payloadcms/ui'
 import type { TextFieldClientProps } from 'payload'
-import React, { useCallback, useEffect } from 'react'
+import React, {
+  useCallback,
+  useEffect,
+} from 'react'
 
 type SlugComponentProps = {
   checkboxFieldPath: string
@@ -26,15 +28,23 @@ export const SlugComponent: React.FC<SlugComponentProps> = ({
   readOnly: readOnlyFromProps,
   path,
 }) => {
-  const { label } = field
+  const {
+    label,
+  } = field
 
   const checkboxFieldPath = path?.includes('.')
     ? `${path}.${checkboxFieldPathFromProps}`
     : checkboxFieldPathFromProps
 
-  const { setValue, value } = useField<string>({ path: path || field.name })
+  const {
+    setValue, value,
+  } = useField<string>({
+    path: path || field.name,
+  })
 
-  const { dispatchFields } = useForm()
+  const {
+    dispatchFields,
+  } = useForm()
 
   // The value of the checkbox
   // We're using separate useFormFields to minimise re-renders

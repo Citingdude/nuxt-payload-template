@@ -1,6 +1,7 @@
 import { withPayload } from '@payloadcms/next/withPayload'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  crossOrigin: 'anonymous',
   experimental: {
     reactCompiler: false,
   },

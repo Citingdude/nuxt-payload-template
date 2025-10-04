@@ -1,6 +1,9 @@
 import type { User } from '@repo/payload-types'
 
-import type { CurrentUser, UserId } from './current-user/currentUser.model'
+import type {
+  CurrentUser,
+  UserId,
+} from './current-user/currentUser.model'
 
 export class AuthTransformer {
   static toCurrentUser(dto: User): CurrentUser {

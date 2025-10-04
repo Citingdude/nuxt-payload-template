@@ -3,29 +3,31 @@ packages:
   - packages/*
 catalogs:
   lint:
-    '@wisemen/eslint-config-vue': 1.1.0
-    eslint: 9.32.0
+    '@wisemen/eslint-config-vue': 1.7.3
+    eslint: 9.37.0
   types:
-    typescript: 5.8.3
-    zod: 3.25.76
+    typescript: 5.9.3
+    zod: 4.1.11
   test:
     vitest: 3.2.4
   payload:
-    '@payloadcms/db-postgres': 3.49.0
-    '@payloadcms/next': 3.49.0
-    '@payloadcms/plugin-seo': 3.49.0
-    '@payloadcms/richtext-lexical': 3.49.0
-    '@payloadcms/storage-s3': 3.49.0
-    '@payloadcms/ui': 3.49.0
-    '@payloadcms/live-preview-vue': 3.49.0
-    '@payloadcms/live-preview': 3.49.0
-    payload: 3.49.0
-    '@payloadcms/plugin-multi-tenant': 3.49.0
+    '@payloadcms/db-postgres': 3.58.0
+    '@payloadcms/sdk': '3.58.0'
+    '@payloadcms/next': 3.58.0
+    '@payloadcms/plugin-seo': 3.58.0
+    '@payloadcms/richtext-lexical': 3.58.0
+    '@payloadcms/storage-s3': 3.58.0
+    '@payloadcms/ui': 3.58.0
+    '@payloadcms/live-preview-vue': 3.58.0
+    '@payloadcms/live-preview': 3.58.0
+    payload: 3.58.0
+    '@payloadcms/plugin-multi-tenant': 3.58.0
   orpc:
-    '@orpc/server': 1.7.5
-    '@orpc/contract': 1.7.5
-    '@orpc/client': 1.7.5
+    '@orpc/server': 1.9.2
+    '@orpc/contract': 1.9.2
+    '@orpc/client': 1.9.2
 onlyBuiltDependencies:
+  - '@parcel/watcher'
   - '@tailwindcss/oxide'
   - esbuild
   - sharp

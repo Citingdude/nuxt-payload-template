@@ -14,6 +14,9 @@ export default withNuxt(
   },
   {
     rules: {
+      'better-tailwindcss/no-unregistered-classes': 'off',
+      'eslint-plugin-wisemen/explicit-function-return-type-with-regex': 'off',
+      'project-structure/independent-modules': 'off',
       'ts/explicit-function-return-type': 'off',
     },
   },

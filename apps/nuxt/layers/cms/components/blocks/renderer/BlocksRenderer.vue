@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import BlocksColumn from '@cms/components/blocks/column/BlocksColumn.vue'
 import BlocksHero from '@cms/components/blocks/hero/BlocksHero.vue'
-import BlocksHubspotForm from '@cms/components/blocks/hubspot/BlocksHubspotForm.vue'
 import BlocksRendererError from '@cms/components/blocks/renderer/BlocksRendererError.vue'
 import BlocksRendererNotSupported from '@cms/components/blocks/renderer/BlocksRendererNotSupported.vue'
 import type { Page } from '@repo/payload-types'
@@ -28,10 +27,6 @@ defineProps<Props>()
         />
         <BlocksColumn
           v-else-if="block.blockType === 'column'"
-          :block="block"
-        />
-        <BlocksHubspotForm
-          v-else-if="block.blockType === 'hubspot-form'"
           :block="block"
         />
         <BlocksRendererNotSupported
